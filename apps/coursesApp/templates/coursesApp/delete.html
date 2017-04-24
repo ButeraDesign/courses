@@ -1,0 +1,24 @@
+<html>
+    <head>
+       <title>Books</title>
+       {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'coursesApp/css/styles.css' %}">
+    </head>
+    <body>
+      <div id="wrapper">
+        <h2>Are You Sure You Want To Delete Course</h2>
+        <br>
+          Name:{{name }}<br>
+          Discription:{{discription }}
+          <br><br>
+          <a href="/"><button type="button">NO</button></a>
+
+          <form action="/delete" method="post">
+            {% csrf_token %}
+            <input type="submit" name="submit" value="Yes I want to delete this file">
+            <input type="hidden" name="id" value={{id}}>
+          </form>
+
+      </div>
+    </body>
+</html>
